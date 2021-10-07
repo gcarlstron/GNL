@@ -40,7 +40,7 @@ char *get_next_line(int fd)
         r = read(fd, buff, BUFFER_SIZE);
         buff[r] = '\0';
     }
-
     line = ft_strjoin(line, buff);
+    
     return (line);
 }
