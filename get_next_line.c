@@ -13,15 +13,6 @@
 #include "get_next_line.h"
 int     BUFFER_SIZE = 42;
 
-void set_free(void *var)
-{
-    free(var);
-    var = NULL;
-}
-
-
-
-
 char *get_next_line(int fd)
 {
     static char     *buff;
@@ -33,14 +24,16 @@ char *get_next_line(int fd)
     buff = malloc(BUFFER_SIZE * sizeof(char) + 1);
     buff[r] = '\0';
     if (!buff)
-        buff[r] = '\0';
-    while (ft_strchr(buff, '\n') == NULL)   
+        return NULL;
+    r = read(fd, buff, BUFFER_SIZE);
+    while (ft_strchr(buff, '\n') == NULL && r > 0)   
     {
         line = ft_strjoin(line, buff);
         r = read(fd, buff, BUFFER_SIZE);
         buff[r] = '\0';
     }
     line = ft_strjoin(line, buff);
-    
+    if (r == 0)
+        return NULL;
     return (line);
 }
