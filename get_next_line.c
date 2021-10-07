@@ -11,28 +11,36 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+int     BUFFER_SIZE = 42;
+
+void set_free(void *var)
+{
+    free(var);
+    var = NULL;
+}
 
 
 
 
 char *get_next_line(int fd)
 {
-    static char    *buff;
-    char    *line;
-    int     r;
-    int     BUFFER_SIZE = 42;
-    
+    static char     *buff;
+    char            *line;
+    int             r;
+
     r = 0;
     line = malloc(1);
     buff = malloc(BUFFER_SIZE * sizeof(char) + 1);
-    //r = read(fd, buff, BUFFER_SIZE);
     buff[r] = '\0';
-    while (ft_strchr(buff, '\n') == NULL)
+    if (!buff)
+        buff[r] = '\0';
+    while (ft_strchr(buff, '\n') == NULL)   
     {
         line = ft_strjoin(line, buff);
         r = read(fd, buff, BUFFER_SIZE);
         buff[r] = '\0';
     }
+
     line = ft_strjoin(line, buff);
     return (line);
 }
