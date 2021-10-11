@@ -73,3 +73,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(r + size1, s2, size2 + 1);
 	return (r);
 }
+
+char	*ft_strdup(const char *s1)
+{
+	char	*dup;
+	size_t	i;
+
+	i = 0;
+	dup = (char *)malloc(sizeof(char) * ft_strlen((char *)s1) + 1);
+	if (!dup)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}

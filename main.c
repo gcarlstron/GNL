@@ -12,6 +12,8 @@ int main(){
     fd = open("texto.txt", O_RDONLY);
     if(!fd)
         return -1;
-    while (line = get_next_line(fd))
-        printf("foi >%d %s\n",n++, line);
+    printf("foi >%d %s\n",n++, get_next_line(fd));
+    printf("foi >%d %s\n",n++, get_next_line(fd));
+    printf("foi >%d %s\n",n++, get_next_line(fd));
+    printf("foi >%d %s\n",n++, get_next_line(fd));
 }
