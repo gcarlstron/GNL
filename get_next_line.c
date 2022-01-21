@@ -6,10 +6,9 @@
 /*   By: gpacheco <gpacheco@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 17:27:36 by gpacheco          #+#    #+#             */
-/*   Updated: 2022/01/20 17:28:20 by gpacheco         ###   ########.fr       */
+/*   Updated: 2022/01/21 11:53:58 by gpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "get_next_line.h"
 
