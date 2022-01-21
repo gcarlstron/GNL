@@ -1,3 +1,0 @@
-ifdef BUFFER_SIZE
-	BUFFER_SIZE = 42
-endif
